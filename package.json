@@ -23,6 +23,7 @@
   "homepage": "https://github.com/sengartech/site-crawler#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.7.4"
+    "mongoose": "^5.7.4",
+    "request": "^2.88.0"
   }
 }

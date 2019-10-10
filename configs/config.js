@@ -1,5 +1,5 @@
-// declariing app configs.
-let config = {
+// declaring app configs.
+module.exports = {
   appName: 'site-crawler',
   appVersion: '1.0.0',
   port: 3000,
@@ -9,9 +9,6 @@ let config = {
   mongoOptions: {
     useNewUrlParser: true,
     useUnifiedTopology: true
-  }
-}
-
-module.exports = {
-  ...config
+  },
+  siteLink: 'https://medium.com'
 }

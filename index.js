@@ -21,7 +21,7 @@ mongoose.connection.on('open', (err) => {
   if (err) {
     console.log(`mongoose connection error: ${err}`);
   } else {
-    console.log(`mongoose connection open: ${config.mongodb.uri}`);
+    console.log(`mongoose connection open: ${config.mongodb.uri}\n`);
   }
 })
 
@@ -38,6 +38,15 @@ process.on('unhandledRejection', (err) => {
   console.log(err)
 })
 
+// importing controller and model.
+require('./models/crawlModel.js');
+let crawlController = require('./controllers/crawlController.js');
+
+// invoking crawler function in five seconds delay of the app start.
+setTimeout(() => {
+  console.log('...invoking crawler function...')
+}, 5000)
+
 /**
  * listening app at specified port in config file.
  */
@@ -46,5 +55,7 @@ app.listen(config.port)
     console.log(`error occurrred while listening: ${err}`)
   })
   .on('listening', () => {
-    console.log(`${config.appName} app is listening at port: ${config.port}`)
+    console.log(`${config.appName} app is listening at port: ${config.port}\n`)
+
+    console.log(`crawler function will get invoked in 5 seconds.....\n`);
   })

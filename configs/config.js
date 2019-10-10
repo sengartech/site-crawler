@@ -10,5 +10,5 @@ module.exports = {
     useNewUrlParser: true,
     useUnifiedTopology: true
   },
-  siteLink: 'https://medium.com'
+  siteLink: process.env['siteLink'] || 'https://medium.com'
 }

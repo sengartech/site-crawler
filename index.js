@@ -29,13 +29,13 @@ mongoose.connection.on('open', (err) => {
  * handling process exceptions and errors.
  */
 process.on('uncaughtException', (err) => {
-  console.log(`uncaught exception occurred`)
-  console.log(err)
+  console.log(`uncaught exception occurred`);
+  console.log(err);
 })
 
 process.on('unhandledRejection', (err) => {
-  console.log(`unhandled rejection occurred`)
-  console.log(err)
+  console.log(`unhandled rejection occurred`);
+  console.log(err);
 })
 
 // importing controller and model.
@@ -44,18 +44,20 @@ let crawlController = require('./controllers/crawlController.js');
 
 // invoking crawler function in five seconds delay of the app start.
 setTimeout(() => {
-  console.log('...invoking crawler function...')
-}, 5000)
+  console.log('...invoking crawler function...');
+
+  crawlController.siteCrawler();
+}, 5000);
 
 /**
  * listening app at specified port in config file.
  */
 app.listen(config.port)
   .on('error', (err) => {
-    console.log(`error occurrred while listening: ${err}`)
+    console.log(`error occurrred while listening: ${err}`);
   })
   .on('listening', () => {
-    console.log(`${config.appName} app is listening at port: ${config.port}\n`)
+    console.log(`${config.appName} app is listening at port: ${config.port}\n`);
 
     console.log(`crawler function will get invoked in 5 seconds.....\n`);
   })

@@ -47,7 +47,7 @@ Editor : Visual Studio Code.
 
 ## Version
 
-This is first version 0.0.1
+This is first version 1.0.0
 
 ## Authors
 

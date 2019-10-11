@@ -15,7 +15,8 @@ let crawlSchema = new Schema({
   },
   url: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   referenceCount: {
     type: Number,

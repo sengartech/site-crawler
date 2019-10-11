@@ -40,6 +40,19 @@ let parseBodyAndExtract = (body) => {
 } // end parseBodyAndExtract.
 
 /**
+ * function to delay the next operation for specified time interval.
+ * we will use this to maintain request rate limit.
+ * params: timeInterval (in miliseconds).
+ */
+let delayOperation = (timeInterval) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, timeInterval);
+  })
+} // end of the delayOperation.
+
+/**
  * trial function to crawl single page.
  */
 let siteCrawler = () => {
